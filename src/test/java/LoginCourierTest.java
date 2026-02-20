@@ -25,15 +25,15 @@ public class LoginCourierTest extends BaseApiTest{
         courier = new CourierModel(LOGIN, PASSWORD, FIRSTNAME);
         courierLogin = new CourierLogin(LOGIN, PASSWORD);
         courierSteps = new CourierSteps();
+
+        // Создаём курьера
+        createCourier(courier);
     }
 
     @Test
     @DisplayName("Курьер может войти в систему")
     @Description("Проверяем, что курьер может войти в систему, если передать валидную пару: логин-пароль")
     public void courierCanLogIn() {
-
-        // Создаём курьера
-        createCourier(courier);
 
         // Передаём валидные логин и пароль созданного курьера
         loginCourier(courierLogin)
@@ -51,9 +51,6 @@ public class LoginCourierTest extends BaseApiTest{
         // Создаём объект без логина
         CourierLogin courierLogin = new CourierLogin(null, PASSWORD);
 
-        // Создаём курьера
-        createCourier(courier);
-
         // Передаём данные без логина
         loginCourier(courierLogin)
                 .then()
@@ -69,9 +66,6 @@ public class LoginCourierTest extends BaseApiTest{
 
         // Создаём объект без пароля
         CourierLogin courierLogin = new CourierLogin(LOGIN, null);
-
-        // Создаём курьера
-        createCourier(courier);
 
         // Передаём данные без пароля
         loginCourier(courierLogin)
@@ -89,9 +83,6 @@ public class LoginCourierTest extends BaseApiTest{
         // Создаём объект, в котором искажаем настоящий логин
         CourierLogin courierLogin = new CourierLogin(LOGIN + 15, PASSWORD);
 
-        // Создаём курьера
-        createCourier(courier);
-
         // Передаём данные с некорректным логином
         loginCourier(courierLogin)
                 .then()
@@ -107,9 +98,6 @@ public class LoginCourierTest extends BaseApiTest{
 
         // Создаём объект, в котором искажаем настоящий пароль
         CourierLogin courierLogin = new CourierLogin(LOGIN, PASSWORD + 1);
-
-        // Создаём курьера
-        createCourier(courier);
 
         // Передаём данные с некорректным паролем
         loginCourier(courierLogin)
