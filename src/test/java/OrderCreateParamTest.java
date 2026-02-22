@@ -37,7 +37,7 @@ public class OrderCreateParamTest extends BaseApiTest{
     @Test
     @DisplayName("Успешное создание заказа")
     @Description("Проверяем, что можно создать заказ, если указать различные варианты цвета самоката")
-    public void successCreateOrder() {
+    public void successCreateOrderTest() {
 
         // Создаём объект, в который будем передавать цвет самоката
         OrderCreate orderCreate = new OrderCreate(color);

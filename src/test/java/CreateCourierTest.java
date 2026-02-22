@@ -28,7 +28,7 @@ public class CreateCourierTest extends BaseApiTest {
     @Test
     @DisplayName("Успешное создание нового курьера")
     @Description("Проверяем, что курьера можно создать, если передать все необходимые поля")
-    public void successCreateNewCourier() {
+    public void successCreateNewCourierTest() {
 
         // Создаём курьера
         createCourier(courier)
@@ -41,7 +41,7 @@ public class CreateCourierTest extends BaseApiTest {
     @Test
     @DisplayName("Ошибка при создании двух одинаковых курьеров")
     @Description("Проверяем, что появляется ошибка при попытке создать двух одинаковых курьеров")
-    public void errorCreatingTwoIdenticalCouriers() {
+    public void errorCreatingTwoIdenticalCouriersTest() {
 
         // Создаём курьера
         createCourier(courier);
@@ -57,7 +57,7 @@ public class CreateCourierTest extends BaseApiTest {
     @Test
     @DisplayName("Ошибка при создании курьера без логина")
     @Description("Проверяем, что появляется ошибка при создании курьера, если не передать логин")
-    public void errorCreatingCourierWithoutLogin() {
+    public void errorCreatingCourierWithoutLoginTest() {
 
         // Создаём объект без логина
         CourierModel courier = new CourierModel(null, PASSWORD, FIRSTNAME);
@@ -73,7 +73,7 @@ public class CreateCourierTest extends BaseApiTest {
     @Test
     @DisplayName("Ошибка при создании курьера без пароля")
     @Description("Проверяем, что появляется ошибка при создании курьера, если не передать пароль")
-    public void errorCreatingCourierWithoutPassword() {
+    public void errorCreatingCourierWithoutPasswordTest() {
 
         // Создаём объект без пароля
         CourierModel courier = new CourierModel(LOGIN, null, FIRSTNAME);

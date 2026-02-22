@@ -11,7 +11,7 @@ public class OrderGetListTest extends BaseApiTest{
     @Test
     @DisplayName("Успешное получение списка заказов")
     @Description("Проверяем, что при запросе возвращается список заказов")
-    public void successGetListOrders() {
+    public void successGetListOrdersTest() {
 
         // Получаем список заказов
         gettingListOrders()

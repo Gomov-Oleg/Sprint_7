@@ -33,7 +33,7 @@ public class LoginCourierTest extends BaseApiTest{
     @Test
     @DisplayName("Курьер может войти в систему")
     @Description("Проверяем, что курьер может войти в систему, если передать валидную пару: логин-пароль")
-    public void courierCanLogIn() {
+    public void courierCanLogInTest() {
 
         // Передаём валидные логин и пароль созданного курьера
         loginCourier(courierLogin)
@@ -46,7 +46,7 @@ public class LoginCourierTest extends BaseApiTest{
     @Test
     @DisplayName("Ошибка, если при авторизации не передать логин")
     @Description("Проверяем, что появляется ошибка, если не передать логин")
-    public void errorLogInCourierWithoutLogin() {
+    public void errorLogInCourierWithoutLoginTest() {
 
         // Создаём объект без логина
         CourierLogin courierLogin = new CourierLogin(null, PASSWORD);
@@ -62,7 +62,7 @@ public class LoginCourierTest extends BaseApiTest{
     @Test
     @DisplayName("Ошибка, если при авторизации не передать пароль")
     @Description("Проверяем, что появляется ошибка, если не передать пароль")
-    public void errorLogInCourierWithoutPassword() {
+    public void errorLogInCourierWithoutPasswordTest() {
 
         // Создаём объект без пароля
         CourierLogin courierLogin = new CourierLogin(LOGIN, null);
@@ -78,7 +78,7 @@ public class LoginCourierTest extends BaseApiTest{
     @Test
     @DisplayName("Ошибка, если при авторизации передать неверный логин")
     @Description("Проверяем, что появляется ошибка, если написать некорректный логин")
-    public void errorLogInCourierIncorrectLogin() {
+    public void errorLogInCourierIncorrectLoginTest() {
 
         // Создаём объект, в котором искажаем настоящий логин
         CourierLogin courierLogin = new CourierLogin(LOGIN + 15, PASSWORD);
@@ -94,7 +94,7 @@ public class LoginCourierTest extends BaseApiTest{
     @Test
     @DisplayName("Ошибка, если при авторизации передать неверный пароль")
     @Description("Проверяем, что появляется ошибка, если написать некорректный пароль")
-    public void errorLogInCourierIncorrectPassword() {
+    public void errorLogInCourierIncorrectPasswordTest() {
 
         // Создаём объект, в котором искажаем настоящий пароль
         CourierLogin courierLogin = new CourierLogin(LOGIN, PASSWORD + 1);
